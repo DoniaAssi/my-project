@@ -232,7 +232,7 @@
   position: absolute;
   right: 0;
   bottom: 0;
-  transform: translate(0, 50px); /* هذا بيخليه يطلع لتحت شوي */
+  transform: translate(0, 50px); 
   background-color: white;
   border-radius: 30px 0 0 0;
   padding: 25px 50px;
@@ -1690,4 +1690,5 @@
   max-width: 500px;
   color: #555;
   line-height: 1.6;
+}
 }
