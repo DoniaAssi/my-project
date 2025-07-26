@@ -65,6 +65,10 @@
   cursor: pointer;
   transition: background 0.3s ease;
 }
+.nav-buttons .contact-btn {
+  background-color: #00b67a;
+}
+
 
 .contact-btn:hover {
   background-color: #009966;
