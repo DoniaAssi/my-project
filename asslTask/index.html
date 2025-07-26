@@ -277,11 +277,14 @@
     </div>
   </section>
 
+
+<section class="testimonial-section">
+
   <section class="testimonial-slide first-slide">
     <div class="testimonial-container">
       <div class="testimonial-text">
         <h3>Medtronic</h3>
-        <p>"We have used services from Xurya... satisfied with the services from Xurya."</p>
+        <p>"We have used services from Xurya for most of our stations... very satisfied."</p>
         <a href="#" class="btn-green">View case study</a>
         <p class="author"><strong>Jeniffer Kolobaly</strong> – CTO EV Medtronic</p>
       </div>
@@ -289,16 +292,15 @@
         <img src="icons/carport.png" alt="Case Study Image" />
       </div>
     </div>
-    <span class="line move"><span class="fill"></span></span>
   </section>
+
 
   <section class="testimonial-slide second-slide hidden">
     <div class="testimonial-container">
       <div class="testimonial-text">
         <img src="icons/tl.png" alt="Telia Cygate Logo" class="client-logo" />
         <p class="quote">"Housing in the future really needs clean and reliable energy sources..."</p>
-        <button class="btn-green">View case study</button>
-
+        <a href="#" class="btn-green">View case study</a>
         <p class="author"><strong>Manahan Mana</strong> – CTO Hyung Motor</p>
       </div>
       <div class="testimonial-image">
@@ -307,13 +309,22 @@
     </div>
   </section>
 
+<div class="testimonial-navigation">
+ 
+  <div class="progress-bars">
+    <span class="line"><span class="fill bar1"></span></span>
+    <span class="line"><span class="fill bar2"></span></span>
+    <span class="line"><span class="fill bar3"></span></span>
+  </div>
 
+  <div class="testimonial-indicators">
+    <span class="dot active">⚡ Electric car charging station</span>
+    <span class="dot">🏠 Residential solar panels</span>
+    <span class="dot">🌬️ Wind power for industry</span>
+  </div>
+</div>
 
-
-
-
-
-
+</section>
 
 
 
@@ -414,28 +425,45 @@
 
 
 
+<script>
+  const slides = document.querySelectorAll('.testimonial-slide');
+  const dots = document.querySelectorAll('.dot');
+  const bars = [
+    document.querySelector('.bar1'),
+    document.querySelector('.bar2'),
+    document.querySelector('.bar3')
+  ];
 
+  let current = 0;
 
-
-
-
-
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const fillBar = document.querySelector('.fill');
-      const firstSlide = document.querySelector('.first-slide');
-      const secondSlide = document.querySelector('.second-slide');
-
-      fillBar.addEventListener('animationend', () => {
-
-        firstSlide.classList.add('hidden');
-
-        secondSlide.classList.remove('hidden');
-      });
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.display = (i === index) ? 'block' : 'none';
+      dots[i].classList.toggle('active', i === index);
     });
-  </script>
+  }
 
+  function animateBars() {
+    bars.forEach(bar => bar.style.width = '0%'); // Reset all
+    bars[current].style.transition = 'width 3s linear';
+    bars[current].style.width = '100%';
+  }
 
+  function nextSlide() {
+    animateBars();
+    showSlide(current);
+
+    setTimeout(() => {
+      current++;
+      if (current < slides.length) {
+        nextSlide();
+      }
+    }, 3000);
+  }
+
+  // Start the sequence
+  nextSlide();
+</script>
 
 
 
