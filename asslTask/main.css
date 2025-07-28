@@ -672,7 +672,7 @@
 .dot {
   margin: 0 8px;
   font-weight: 500;
-  color: gray;
+  color: #808080;
 }
 
 .dot.active {
@@ -835,14 +835,14 @@
 .partners-row {
   display: flex;
   justify-content: center;
-  gap: 30px;
+ /* gap: 30px;*/
   flex-wrap: wrap;
   margin-top: 40px;
 }
 
 .partner {
-  width: 120px;
-  height: 100px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   background-color: #f2f2f2;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
@@ -868,7 +868,7 @@
 
 .partner p {
   margin: 0;
-  font-size: 13px;
+  font-size: 17px;
   color: #444;
   transition: color 0.3s ease;
 }
